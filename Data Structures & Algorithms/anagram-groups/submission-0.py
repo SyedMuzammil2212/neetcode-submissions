@@ -1,12 +1,15 @@
 class Solution:
     def groupAnagrams(self, strs: List[str]) -> List[List[str]]:
-        check={}
-        for item in strs:
-            word="".join(sorted(item))
-            if word in check:
-                check[word].append(item)
+        h=dict()
+        for val in strs:
+            k="".join(sorted(val))
+            if k in h.keys():
+                h[k].append(val)
             else:
-                check[word]=[item]
-        return list(check.values())
+                h[k]=[val]
+        return list(h.values())
             
+        
+
+
         
